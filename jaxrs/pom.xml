@@ -1,6 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.jboss</groupId>
+        <artifactId>jboss-parent</artifactId>
+        <version>14</version>
+        <relativePath></relativePath>
+    </parent>
 
     <name>RESTEasy JAX-RS</name>
     <description>
@@ -8,16 +14,17 @@
     </description>
     <groupId>org.jboss.resteasy</groupId>
     <artifactId>resteasy-jaxrs-all</artifactId>
-    <version>3.0.7.Final</version>
+    <version>3.0.7.Final-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <maven.compiler.source>1.6</maven.compiler.source>
         <jboss.home>/Users/billburke/jboss/WildFly-8.0.0.Final</jboss.home>
         <dep.jaxb-impl.version>2.2.7</dep.jaxb-impl.version>
         <dep.jettison.version>1.3.2</dep.jettison.version>
         <dep.commons-io.version>2.1</dep.commons-io.version>
-        <dep.hibernate-validator.version>5.1.0.Final</dep.hibernate-validator.version>
-        <dep.javax.persistence.version>1.0.1.Final</dep.javax.persistence.version>
+        <version.org.hibernate.validator>5.1.0.Final</version.org.hibernate.validator>
         <dep.spring-webmvc.version>3.0.6.RELEASE</dep.spring-webmvc.version>
         <dep.snakeyaml.version>1.8</dep.snakeyaml.version>
         <dep.cdi-api.version>1.1</dep.cdi-api.version>
@@ -26,11 +33,15 @@
         <dep.netty.version>3.6.4.Final</dep.netty.version>
         <dep.netty4.version>4.0.7.Final</dep.netty4.version>
         <dep.slf4j.version>1.7.5</dep.slf4j.version>
+        <version.org.javassist>3.18.1-GA</version.org.javassist>
         <version.org.hibernate.javax.persistence.hibernate-jpa-2.1-api>1.0.0.Final</version.org.hibernate.javax.persistence.hibernate-jpa-2.1-api>
         <version.org.jboss.spec.javax.el.jboss-el-api_3.0_spec>1.0.0.Final</version.org.jboss.spec.javax.el.jboss-el-api_3.0_spec>
         <version.org.jboss.spec.javax.servlet.jboss-servlet-api_3.1_spec>1.0.0.Final</version.org.jboss.spec.javax.servlet.jboss-servlet-api_3.1_spec>
+        <version.org.jboss.spec.javax.annotation.jboss-annotations-api_1.2_spec>1.0.0.Final</version.org.jboss.spec.javax.annotation.jboss-annotations-api_1.2_spec>
         <version.org.glassfish.javax.el>3.0.0</version.org.glassfish.javax.el>
+        <version.jetty>9.1.3.v20140225</version.jetty>
         <version.io.undertow>1.0.1.Final</version.io.undertow>
+        <version.org.infinispan>6.0.1.Final</version.org.infinispan>
         <version.com.fasterxml.jackson>2.3.2</version.com.fasterxml.jackson>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -158,15 +169,16 @@
             </dependency>
 
             <dependency>
-                <groupId>javassist</groupId>
+                <groupId>org.javassist</groupId>
                 <artifactId>javassist</artifactId>
-                <version>3.8.0.GA</version>
+                <version>${version.org.javassist}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.jboss.spec.javax.annotation</groupId>
-                <artifactId>jboss-annotations-api_1.1_spec</artifactId>
-                <version>1.0.1.Final</version>
+                <artifactId>jboss-annotations-api_1.2_spec</artifactId>
+                <version>${version.org.jboss.spec.javax.annotation.jboss-annotations-api_1.2_spec}</version>
+                <scope>provided</scope>
             </dependency>
 
             <dependency>
@@ -192,15 +204,15 @@
             <dependency>
                 <groupId>com.sun.xml.fastinfoset</groupId>
                 <artifactId>FastInfoset</artifactId>
-                <version>1.2.7</version>
+                <version>1.2.13</version>
             </dependency>
 
             <dependency>
-        		<groupId>org.hibernate.javax.persistence</groupId>
-            	<artifactId>hibernate-jpa-2.0-api</artifactId>
-            	<version>${dep.javax.persistence.version}</version>
+                <groupId>org.hibernate.javax.persistence</groupId>
+                <artifactId>hibernate-jpa-2.1-api</artifactId>
+                <version>${version.org.hibernate.javax.persistence.hibernate-jpa-2.1-api}</version>
+                <scope>provided</scope>
             </dependency>
-
 
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
@@ -230,23 +242,16 @@
                 <groupId>javax.activation</groupId>
                 <artifactId>activation</artifactId>
                 <version>1.1</version>
+                <scope>provided</scope>
             </dependency>
 
             <dependency>
                 <groupId>javax.mail</groupId>
                 <artifactId>mail</artifactId>
                 <version>1.5.0-b01</version>
+                <scope>provided</scope>
             </dependency>
 
-            <!--
-            We forked it for now because of startup/shutdown race conditions
-
-                        <dependency>
-                            <groupId>tjws</groupId>
-                            <artifactId>webserver</artifactId>
-                            <version>1.7.0</version>
-                        </dependency>
-            -->
             <dependency>
                 <groupId>io.undertow</groupId>
                 <artifactId>undertow-servlet</artifactId>
@@ -270,7 +275,7 @@
             <dependency>
                 <groupId>org.glassfish</groupId>
                 <artifactId>javax.json</artifactId>
-                <version>1.0.3</version>
+                <version>1.0.4</version>
             </dependency>
 
             <dependency>
@@ -282,7 +287,7 @@
             <dependency>
                 <groupId>org.apache.james</groupId>
                 <artifactId>apache-mime4j</artifactId>
-                <version>0.6</version>
+                <version>0.6.1</version>
              </dependency>
             <dependency>
                 <groupId>junit</groupId>
@@ -324,37 +329,32 @@
             <dependency>
                 <groupId>org.codehaus.jackson</groupId>
                 <artifactId>jackson-core-asl</artifactId>
-                <version>1.9.12</version>
+                <version>1.9.13</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.jackson</groupId>
                 <artifactId>jackson-mapper-asl</artifactId>
-                <version>1.9.12</version>
+                <version>1.9.13</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.jackson</groupId>
                 <artifactId>jackson-xc</artifactId>
-                <version>1.9.12</version>
+                <version>1.9.13</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.jackson</groupId>
                 <artifactId>jackson-jaxrs</artifactId>
-                <version>1.9.12</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jboss.cache</groupId>
-                <artifactId>jbosscache-core</artifactId>
-                <version>3.2.5.GA</version>
+                <version>1.9.13</version>
             </dependency>
             <dependency>
                 <groupId>org.infinispan</groupId>
                 <artifactId>infinispan-core</artifactId>
-                <version>5.1.6.FINAL</version>
+                <version>${version.org.infinispan}</version>
             </dependency>
             <dependency>
                 <groupId>org.infinispan</groupId>
                 <artifactId>infinispan-tree</artifactId>
-                <version>5.1.6.FINAL</version>
+                <version>${version.org.infinispan}</version>
             </dependency>
             <dependency>
                 <groupId>org.bouncycastle</groupId>
@@ -407,25 +407,16 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.16</version>
+                    <version>${version.surefire.plugin}</version>
                     <configuration>
                         <forkMode>once</forkMode>
                         <argLine>-Xms512m -Xmx512m</argLine>
                     </configuration>
                 </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.1</version>
-                    <configuration>
-                        <source>1.6</source>
-                        <target>1.6</target>
-                    </configuration>
-                </plugin>
-                <plugin>
+                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>2.8</version>
+                    <version>${version.javadoc.plugin}</version>
                     <configuration>
                         <minmemory>128m</minmemory>
                         <maxmemory>1024m</maxmemory>
@@ -438,28 +429,10 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-install-plugin</artifactId>
-                    <version>2.3.1</version>
+                    <version>${version.install.plugin}</version>
                     <configuration>
                         <createChecksum>true</createChecksum>
                     </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <version>2.1.2</version>
-                    <executions>
-                        <execution>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>jar</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-deploy-plugin</artifactId>
-                    <version>2.5</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -468,20 +441,7 @@
             <plugin>
                 <groupId>com.atlassian.maven.plugins</groupId>
                 <artifactId>maven-clover2-plugin</artifactId>
-                <version>3.1.6</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>2.1.2</version>
-                <executions>
-                    <execution>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <version>${version.clover2.plugin}</version>
             </plugin>
         </plugins>
 

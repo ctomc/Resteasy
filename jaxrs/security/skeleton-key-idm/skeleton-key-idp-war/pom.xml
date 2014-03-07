@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
-        <artifactId>resteasy-jaxrs-all</artifactId>
         <groupId>org.jboss.resteasy</groupId>
-        <version>3.0.7.Final</version>
-        <relativePath>../../../pom.xml</relativePath>
+        <artifactId>resteasy-skeleton-key-pom</artifactId>
+        <version>3.0.7.Final-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.resteasy.example</groupId>
@@ -13,7 +13,6 @@
     <packaging>war</packaging>
     <name>Resteasy Skeleton Key Server WAR</name>
     <description/>
-    <url>http://maven.apache.org</url>
 
     <repositories>
         <repository>
@@ -86,14 +85,6 @@
                 <artifactId>jboss-as-maven-plugin</artifactId>
                 <version>7.1.1.Final</version>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
-        </plugins>
+         </plugins>
     </build>
 </project>

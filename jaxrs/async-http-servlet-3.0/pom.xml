@@ -3,13 +3,12 @@
     <parent>
         <groupId>org.jboss.resteasy</groupId>
         <artifactId>resteasy-jaxrs-all</artifactId>
-        <version>3.0.7.Final</version>
+        <version>3.0.7.Final-SNAPSHOT</version>
     </parent>
     <name>Async Http JBossWeb</name>
     <description/>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.jboss.resteasy</groupId>
     <artifactId>asynch-http-servlet-3.0-pom</artifactId>
     <packaging>pom</packaging>
 

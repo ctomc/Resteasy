@@ -4,10 +4,9 @@
     <parent>
         <groupId>org.jboss.resteasy</groupId>
         <artifactId>resteasy-jaxrs-all</artifactId>
-        <version>3.0.7.Final</version>
+        <version>3.0.7.Final-SNAPSHOT</version>
 	    <relativePath>../../pom.xml</relativePath>
     </parent>
-    <groupId>org.jboss.resteasy</groupId>
     <artifactId>resteasy-cache-core</artifactId>
     <packaging>jar</packaging>
     <name>RESTEasy Cache Core</name>

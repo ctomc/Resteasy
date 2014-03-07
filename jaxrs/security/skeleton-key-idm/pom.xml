@@ -2,15 +2,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
         <groupId>org.jboss.resteasy</groupId>
-        <artifactId>resteasy-jaxrs-all</artifactId>
-        <version>3.0.7.Final</version>
-        <relativePath>../../pom.xml</relativePath>
+        <artifactId>security-pom</artifactId>
+        <version>3.0.7.Final-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <name>Resteasy Skeleton Key POM</name>
     <description/>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.jboss.resteasy</groupId>
     <artifactId>resteasy-skeleton-key-pom</artifactId>
     <packaging>pom</packaging>
 

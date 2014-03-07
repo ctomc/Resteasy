@@ -2,7 +2,7 @@
     <parent>
         <groupId>org.jboss.resteasy</groupId>
         <artifactId>resteasy-jaxrs-all</artifactId>
-        <version>3.0.7.Final</version>
+        <version>3.0.7.Final-SNAPSHOT</version>
 	    <relativePath>../../pom.xml</relativePath>
     </parent>
     <name>Resteasy Examples</name>
@@ -10,7 +10,6 @@
     <url>http://wiki.jboss.org/wiki/Wiki.jsp?page=RESTeasyJAXRS</url>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.jboss.resteasy</groupId>
     <artifactId>signature-examples-pom</artifactId>
     <packaging>pom</packaging>
 

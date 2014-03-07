@@ -9,7 +9,6 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.oreilly.rest.workbook</groupId>
     <artifactId>workbook-ex03_1</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
@@ -20,7 +19,7 @@
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxrs</artifactId>
-            <version>3.0.7.Final</version>
+            <version>3.0.7.Final-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
