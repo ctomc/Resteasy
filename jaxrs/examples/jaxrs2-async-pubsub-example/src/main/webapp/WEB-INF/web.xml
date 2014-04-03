@@ -1,4 +1,7 @@
-<web-app>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+      version="3.0">
     <servlet>
         <servlet-name>Resteasy</servlet-name>
         <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServlet30Dispatcher</servlet-class>
@@ -6,6 +9,7 @@
             <param-name>javax.ws.rs.Application</param-name>
             <param-value>org.jboss.resteasy.example.pubsub.PubSubApplication</param-value>
         </init-param>
+        <async-supported>true</async-supported>
     </servlet>
 
     <servlet-mapping>

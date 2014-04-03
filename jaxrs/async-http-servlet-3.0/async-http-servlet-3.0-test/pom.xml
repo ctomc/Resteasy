@@ -53,9 +53,8 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.mortbay.jetty</groupId>
+                <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>8.1.11.v20130520</version>
                 <configuration>
                     <webApp>
                         <contextPath>/</contextPath>

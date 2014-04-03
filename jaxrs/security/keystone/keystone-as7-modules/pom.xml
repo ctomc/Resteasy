@@ -29,9 +29,9 @@
 
     <parent>
         <groupId>org.jboss.resteasy</groupId>
-        <artifactId>resteasy-jaxrs-all</artifactId>
+        <artifactId>security-pom</artifactId>
         <version>3.0.7.Final-SNAPSHOT</version>
-        <relativePath>../../../pom.xml</relativePath>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <artifactId>resteasy-keystone-as7-modules</artifactId>

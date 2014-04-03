@@ -56,9 +56,8 @@
         <finalName>resteasy-jsapi-testing</finalName>
         <plugins>
             <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>maven-jetty-plugin</artifactId>
-                <version>6.1.15</version>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
                 <configuration>
                     <scanIntervalSeconds>5</scanIntervalSeconds>
                     <stopKey>foo</stopKey>

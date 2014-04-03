@@ -172,6 +172,7 @@
                 <groupId>org.javassist</groupId>
                 <artifactId>javassist</artifactId>
                 <version>${version.org.javassist}</version>
+                <scope>provided</scope>
             </dependency>
 
             <dependency>
@@ -185,6 +186,7 @@
                 <groupId>com.sun.xml.bind</groupId>
                 <artifactId>jaxb-impl</artifactId>
                 <version>${dep.jaxb-impl.version}</version>
+                <scope>provided</scope>
             </dependency>
 
             <dependency>
@@ -433,6 +435,11 @@
                     <configuration>
                         <createChecksum>true</createChecksum>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.eclipse.jetty</groupId>
+                    <artifactId>jetty-maven-plugin</artifactId>
+                    <version>${version.jetty}</version>
                 </plugin>
             </plugins>
         </pluginManagement>

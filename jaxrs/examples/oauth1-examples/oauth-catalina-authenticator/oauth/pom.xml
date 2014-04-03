@@ -74,6 +74,11 @@
           <version>2.0.4</version>
           <scope>provided</scope>
        </dependency>
+        <dependency>
+            <groupId>org.jboss.spec.javax.annotation</groupId>
+            <artifactId>jboss-annotations-api_1.2_spec</artifactId>
+            <version>1.0.0.Final</version>
+        </dependency>
     </dependencies>
 
     <!-- this distributionManagement is only here for RESTEasy automated testing of examples build.  You can remove if you are copying this
